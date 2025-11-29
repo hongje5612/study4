@@ -120,7 +120,7 @@ class Solution(val size : Byte, val count : Byte, val researchInstitute : Array<
             inQueue[location.row.toInt()][location.col.toInt()] = true
         }
 
-        var cnt : Int = 0       // 빈 공간이 활성 바이러스로 변한 수
+        var cnt = 0       // 빈 공간이 활성 바이러스로 변한 수
 
         while(queue.isNotEmpty()) {
             val piece = queue.removeFirst()
