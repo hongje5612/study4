@@ -1,5 +1,11 @@
 package org.example.p17142.try01
 
+/**
+ * 문제 출처 : https://www.acmicpc.net/problem/17142
+ *
+ * @author
+ *  조홍제
+ */
 import java.util.Objects
 
 const val EMPTY : Byte = 0      // 비어있는 공간
