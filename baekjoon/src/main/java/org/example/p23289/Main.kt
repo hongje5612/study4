@@ -580,7 +580,7 @@ class Solution(val rowSize : Byte, val colSize : Byte, val k : Short, grid : Arr
 
             if(chocolate > 100) return 101              // 초콜렛을 백개 이상 먹었으면 무조건 101개를 반환한다.
 
-            if(temperatureIsAboveKDegrees()) return chocolate       // 조자해야할 위치의 온도가 모두 K도 이상이면 먹은 초콜렛 개수를 반환한다.
+            if(temperatureIsAboveKDegrees()) return chocolate       // 조사해야할 위치의 온도가 모두 K도 이상이면 먹은 초콜렛 개수를 반환한다.
         }
     }
 }   /* end of Solution */
