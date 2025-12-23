@@ -309,11 +309,10 @@ fun moveShark(round : Int) {
     val thirdMovement = rem % 10
     val movements = arrayOf(firstMovement, secondMovement, thirdMovement)
     var currentLocation = shark.currentLocation
-    var cell = grid[currentLocation.row.toInt()][currentLocation.col.toInt()]
 
     for(movement in movements) {
         val nextLocation = nextLocationFunctionOfShark[movement - 1].invoke(currentLocation)
-        cell = grid[nextLocation.row.toInt()][nextLocation.col.toInt()]
+        val cell = grid[nextLocation.row.toInt()][nextLocation.col.toInt()]
         if(cell.fish.isNotEmpty()) cell.smell.add(Smell(round))
         cell.fish.clear()   // 상어가 다 잡아 먹는다.
         currentLocation = nextLocation
