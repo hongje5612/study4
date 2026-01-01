@@ -102,9 +102,9 @@ class Grid {
      * 블럭을 격자판 위에 내려 놓습니다.
      */
     fun putDown(block : Block) {
-        var putItDown = false
+        var putItDown = false       // 블록은 내려 놓지 않았음
 
-        if(block.secondTile != null) {
+        if(block.secondTile != null) {      // 블록에 타일이 두개 이면
             if (block.firstTile.row == block.secondTile.row) {
                 val col1 = block.firstTile.column
                 val col2 = block.secondTile.column
@@ -118,7 +118,7 @@ class Grid {
                     }
                 }
 
-                if(!putItDown) {
+                if(!putItDown) {        // 아직 내려 놓지 않았다면
                     grid[rowSize - 1][col1.toInt()] = true
                     grid[rowSize - 1][col2.toInt()] = true
                 }
@@ -134,12 +134,12 @@ class Grid {
                         break
                     }
                 }
-                if(!putItDown) {
+                if(!putItDown) {        // 아직 내려 놓지 않았다면
                     grid[rowSize - 1][col.toInt()] = true
                     grid[rowSize - 2][col.toInt()] = true
                 }
             }
-        } else {
+        } else {    // 블럭에 타일이 하나 인 경우
             val col = block.firstTile.column
             for(row in 0 until rowSize) {
                 if(grid[row][col.toInt()]) {
@@ -149,7 +149,7 @@ class Grid {
                 }
             }
 
-            if(!putItDown) {
+            if(!putItDown) {    // 아직 내려 놓지 않았다면
                 grid[rowSize - 1][col.toInt()] = true
             }
         }
