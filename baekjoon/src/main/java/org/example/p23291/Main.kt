@@ -160,7 +160,7 @@ class Solution(val size : Byte, val k : Byte, arr : IntArray) {
          */
         var startIndex = Int.MIN_VALUE      // 높이가 2 이상인 어항들이 있는 시작 열 인덱스
         var endIndex = Int.MIN_VALUE        // 높이가 2 이상인 어항들이 있는 마지막 열 인덱스
-        var height : Int = 1                // 높이가 2 이상인 어항들, 공중 부양 해야 하는 어항들의 높이
+        var height  = 1                     // 높이가 2 이상인 어항들, 공중 부양 해야 하는 어항들의 높이
 
         for(col in 0 until size) {
             val h = height(col)
@@ -238,7 +238,7 @@ class Solution(val size : Byte, val k : Byte, arr : IntArray) {
                                 if(set1 != null) set1.add(nextLocation)
                                 else memory[currentLocation] = mutableSetOf(nextLocation)
                                 val set2 = memory[nextLocation]
-                                if(set1 != null) set1.add(currentLocation)
+                                if(set2 != null) set2.add(currentLocation)
                                 else memory[nextLocation] = mutableSetOf(currentLocation)
                             }
                         }
