@@ -65,6 +65,7 @@ class Location(val row : Byte, val column : Byte) {
 
 /**
  * 문제를 해결하는 클래스
+ *
  * @property
  *  size : 어항의 개수
  *  k : 물고기가 가장 많이 들어있는 어항과 가장 적게 들어있는 어항의 물고기 수 차이가 K 이하가 되려면 어항을 몇 번 정리해야하는지 출력한다
