@@ -85,7 +85,7 @@ class Solution(val square : Array<CharArray>) {
     }
 
     fun printAnswer() {
-        var locationOfHead : Location = Location(0, 0)
+        var locationOfHead = Location(0, 0)
         searchHead().ifPresent { locationOfHead = it }
         val locationOfHeart = locationOfHead.down()
 
