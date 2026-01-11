@@ -1,7 +1,6 @@
 package org.example.p20125
 
 import java.util.Optional
-import kotlin.reflect.KFunction1
 
 /**
  * 문제 출처 : https://www.acmicpc.net/problem/20125
@@ -67,13 +66,13 @@ class Solution(val square : Array<CharArray>) {
      *  pair.first : 길이
      *  pair.second : 그 신쳉 부의의 마지막 위치, 팔의 끝, 허리의 끝
      */
-    private fun calculateLength(startLocation : Location, nextLocationFunction : KFunction1<Location, Location>) : Pair<Short, Location?> {
+    private fun calculateLength(startLocation : Location, nextLocationFunction : (Location) -> Location) : Pair<Short, Location?> {
         var answer : Short = 0 // 왼 팔의 길이
         var currentLocation = startLocation
         var endLocation : Location? = null
 
         while(true) {
-            currentLocation = nextLocationFunction.invoke(currentLocation)
+            currentLocation = nextLocationFunction(currentLocation)
             if(!currentLocation.isValid()) break
             if(square[currentLocation.row.toInt()][currentLocation.col.toInt()] == BODY) {
                 answer++
