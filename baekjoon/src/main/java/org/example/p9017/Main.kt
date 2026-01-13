@@ -13,7 +13,7 @@ fun main() {
     val t = readln().toInt()        // 테스트 케이스 수
     val problems = ArrayList<List<Short>>()
     repeat(t) {
-        val n = readln().toInt()
+        readln().toInt()
         val problem = readln().split(" ").map { it.toShort() }
         problems.add(problem)
     }
